@@ -7,28 +7,28 @@
     <title>Home / Twitter</title>
     <link
       rel="shortcut icon"
-      href="../public/images/favicon/favicon-16x16.png"
+      href="images/favicon/favicon.ico"
       type="image/x-icon"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../public/images/favicon/apple-touch-icon.png"
+      href="images/favicon/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="../public/images/favicon/favicon-32x32.png"
+      href="images/favicon/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="../public/images/favicon/favicon-16x16.png"
+      href="images/favicon/favicon-16x16.png"
     />
-    <link rel="stylesheet" href="../public/css/main.css" />
-    <script defer src="../controllers/main.js"></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/main.js"></script>
   </head>
   <body>
     <div class="container">
@@ -60,30 +60,6 @@
                 </a>
               </li>
               <li>
-                <a href="/messages">
-                  <i class="fa-solid fa-envelope"></i>
-                  <span>Messages</span>
-                </a>
-              </li>
-              <li>
-                <a href="/profile">
-                  <i class="fa-solid fa-user"></i>
-                  <span>Profile</span>
-                </a>
-              </li>
-              <li>
-                <a href="/bookmark">
-                  <i class="fa-solid fa-bookmark"></i>
-                  <span>Bookmarks</span>
-                </a>
-              </li>
-              <li>
-                <a href="/lists">
-                  <i class="fa-solid fa-list"></i>
-                  <span>Lists</span>
-                </a>
-              </li>
-              <li>
                 <a href="/auth/logout">
                   <i class="fa-solid fa-power-off"></i>
                   <span>Log out</span>
@@ -93,7 +69,6 @@
           </div>
         </div>
       </div>
-
       <div class="main">
         <%- include(page) -%>
         <div class="right-side-container">
@@ -103,26 +78,27 @@
             </div>
             <div class="trending-tweets">
               <% trendingTweets.forEach(tweet => { %>
-              <div class="tweet-content">
-                <div class="tweet-header">
-                  <span class="tweet-name">
-                    <a href="/profile/<%= tweet.userId %>">
-                      <span> <%= tweet.name %> </span>
-                    </a>
-                  </span>
-                  <span class="tweet-handle">
-                    <a href="/profile/<%= tweet.userId %>">
-                      <span> @<%= tweet.username %> </span>
-                    </a>
-                  </span>
-                  <span class="tweet-time"> <%= tweet.tweetTime %> </span>
-                </div>
-                <div class="tweet-body">
-                  <div class="tweet-text">
-                    <span> <%= tweet.tweet %> </span>
+
+                <div class="tweet-content">
+                  <div class="tweet-header">
+                    <span class="tweet-name">
+                      <a href="/profile/<%= tweet.userId %>">
+                        <span> <%= tweet.name %> </span>
+                      </a>
+                    </span>
+                    <span class="tweet-handle">
+                      <a href="/profile/<%= tweet.userId %>">
+                        <span> @<%= tweet.username %> </span>
+                      </a>
+                    </span>
+                    <span class="tweet-time"> <%= tweet.tweetTime %> </span>
+                  </div>
+                  <div class="tweet-body">
+                    <div class="tweet-text">
+                      <span> <%= tweet.tweet %> </span>
+                    </div>
                   </div>
                 </div>
-              </div>
               <% }) %>
             </div>
           </div>
